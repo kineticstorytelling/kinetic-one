@@ -1,0 +1,494 @@
+/*
+Theme Name: Kinetic 1
+Author: Luke Nam
+Author URI: https://lukenam.com
+Description: Simple theme made by Kinetic Storytelling.
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+Text Domain: Kinetic1
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=Poppins:wght@400;600;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff-primary);
+}
+
+:root{
+    --clr-primary: #FFFFFF;
+    --clr-secondary: #482BE7;
+    --clr-tertiary:#25DAC5;
+
+    --ff-primary: 'DM Sans', sans-serif;
+    --ff-secondary: 'Poppins', sans-serif;
+ }
+body{
+    background-color: #2F1893;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 10s;
+    flex-wrap: wrap;
+}
+.logo{
+    font-size: 24px;
+    color: var(--clr-primary);
+    font-family: var(--ff-secondary);
+    /* font-weight: 700; */
+    letter-spacing: 1px;
+    position: relative;
+    left: 10%;
+} 
+.nav_menu{
+    padding: 2rem;
+}
+#signature{
+    stroke-dasharray: 1840;
+    stroke-dashoffset: 1840;
+    animation: sign 4s ease;
+    animation-fill-mode: forwards;
+}
+@keyframes sign{
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 1px 20px;
+    font-size: 18px;
+    position: relative;
+    right: 45%;
+}
+ul li a{
+    text-decoration: none;
+    color: var(--clr-primary);
+    position: relative;
+}
+ul li a:hover{
+    color: var(--clr-tertiary);
+}
+.nav_btn{
+    color: white;
+    background-color: #482BE7;
+    border: none;
+    padding: 8px 24px 8px 24px;
+    border-radius: 100px;
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+}
+.nav_btn:hover{
+    background-color: var(--clr-tertiary);
+    transition: all 0.3s ease-in-out;
+}
+.hero{
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.hero h1{
+    color: var(--clr-primary);
+    font-size: 4.5rem;
+    padding: 5% 25% 2% 25%;
+    text-align: center;
+}
+.hero p{
+    color: var(--clr-primary);
+    text-align: center;
+    font-size: 22px;
+    padding: 0% 29% 3% 29%;
+}
+.hero input{
+    border: 2px solid var(--clr-primary);
+    opacity: 0.28;
+    border-radius: 100px;
+    background-color: transparent;
+    position: relative;
+    right: 3%;
+    padding: 1.3% 18% 1.3% 2%;
+}
+::placeholder{
+    color: rgb(218, 217, 217);
+    font-size: 20px;
+}
+.hero_btn{
+    position: relative;
+    left: 16.5%;
+    margin-top: -3.7%;
+    margin-left: 5%;
+    padding: .7% 2% .7% 2%;
+    font-family: var(--ff-secondary);
+    font-size: 20px;
+    color: var(--clr-primary);
+    background-color: var(--clr-tertiary);
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+}
+.hero_btn:hover{
+    background-color: var(--clr-secondary);
+    transition: all 0.3s ease-in-out;
+}
+.hero_p p{
+    position: relative;
+    padding: 8% 0 5% 0;
+    font-family: var(--ff-secondary);
+    font-size: 16px;
+    color: var(--clr-primary);
+    opacity: 0.4;
+}
+
+/* formmm */
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+
+/* html,body{ 
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    background: #f2f2f2;
+    background: linear-gradient(-135deg, #c850c0, #4158d0); 
+}  */
+::selection{
+    background: #4158d0;
+    color: #fff;
+}
+.wrapper{
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+    width: 380px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.wrapper .title{
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 100px;
+    color: #fff;
+    user-select: none;
+    border-radius: 15px 15px 0 0;
+    background: linear-gradient(-125deg, #1b141b, #4158d0);
+}
+/* the actual form input spaces */
+.wrapper form{
+    padding: 10px 30px 50px 30px;
+}
+.wrapper form .field{
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+.wrapper form .field input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 17px;
+    padding-left: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+.wrapper form .field input:focus, 
+form .field input:valid{
+    border-color: #4158d0;
+}
+/* to make the placeholder text move up */
+.wrapper form .field label{
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    color: #999999;
+    font-weight: 400;
+    font-size: 17px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;    
+}
+form .field input:focus ~ label,
+form .field input:valid ~ label{
+    top: 0%;
+    font-size: 16px;
+    color: #4158d0;
+    background: #fff;
+    transform: translateY(-50%);
+}
+form .content{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    align-items: center;
+    justify-content: space-around;
+}
+form .content .checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form .content input{
+    width: 15px;
+    height: 15px;
+    background: red;
+}
+form .content label{
+    color: #262626;
+    user-select: none;
+    padding-left: 5px;
+}
+form .content .pass-link{
+    color: "";
+}
+form .field input[type="submit"]{
+    color: #fff;
+    border: none;
+    padding-left: 0;
+    margin-top: -10px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    background: linear-gradient(-135deg, #1b141b, #4158d0);
+    transition: all 0.3s ease;
+}
+form .field input[type="submit"]:active{
+    transform: scale(0.95);
+}
+form .signup-link{
+    color: #262626;
+    margin-top: 20px;
+    text-align: center;
+}
+form .pass-link a,
+form .signup-link a{
+    color: #4158d0;
+    text-decoration: none;
+}
+form .pass-link a:hover,
+form .signup-link a:hover{
+    text-decoration: underline;
+}
+
+
+#check{
+  display: none;
+}
+label #btn,label #cancel{
+  position: absolute;
+  background: #042331;
+  border-radius: 3px;
+  cursor: pointer;
+}
+label #btn{
+  left: 40px;
+  top: 25px;
+  font-size: 35px;
+  color: white;
+  padding: 6px 12px;
+  transition: all .5s;
+}
+label #cancel{
+  z-index: 1111;
+  left: -195px;
+  top: 17px;
+  font-size: 30px;
+  color: #0a5275;
+  padding: 4px 9px;
+  transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+  left: 0;
+}
+#check:checked ~ label #btn{
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+#check:checked ~ label #cancel{
+  left: 195px;
+}
+#check:checked ~ section{
+  margin-left: 250px;
+}
+/* section{
+  background: url(bg.jpeg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  transition: all .5s;
+} */
+
+/* Footerrr */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+
+footer{
+  font-family: 'Poppins', sans-serif;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background: #111;
+}
+.main-content{
+  display: flex;
+  color: rgb(231, 230, 230);
+}
+.main-content .box{
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+.box h2{
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.box .content{
+  margin: 20px 0 0 0;
+  position: relative;
+}
+.box .content:before{
+  position: absolute;
+  content: '';
+  top: -10px;
+  height: 2px;
+  width: 100%;
+  background: #1a1a1a;
+}
+.box .content:after{
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 15%;
+  background: var(--clr-tertiary);
+  top: -10px;
+}
+.left .content p{
+  text-align: justify;
+}
+.left .content .social{
+  margin: 20px 0 0 0;
+}
+.left .content .social a{
+  padding: 0 2px;
+}
+.left .content .social a span{
+  height: 40px;
+  width: 40px;
+  background: var(--clr-secondary);
+  color: var(--clr-tertiary);
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.left .content .social a span:hover{
+  background: var(--clr-tertiary);
+  color: var(--clr-secondary);
+}
+.center .content .fas{
+  font-size: 1.4375rem;
+  background: #1a1a1a;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.center .content .fas:hover{
+  background: var(--clr-secondary);
+}
+.center .content .text{
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.center .content .phone{
+  margin: 15px 0;
+}
+.right form .text{
+  font-size: 1.0625rem;
+  margin-bottom: 2px;
+  color: #656565;
+}
+.right form .msg{
+  margin-top: 10px;
+}
+.right form input, .right form textarea{
+  width: 100%;
+  font-size: 1.0625rem;
+  background: #151515;
+  padding-left: 10px;
+  border: 1px solid #222222;
+}
+.right form input:focus,
+.right form textarea:focus{
+  outline-color: #3498db;
+}
+.right form input{
+  height: 35px;
+}
+.right form .btn{
+  margin-top: 10px;
+}
+.right form .btn button{
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: var(--clr-primary);
+  background: var(--clr-secondary);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .3s;
+}
+.right form .btn button:hover{
+  background: var(--clr-tertiary);
+  color: var(--clr-secondary);
+}
+.bottom center{
+  padding: 5px;
+  font-size: 0.9375rem;
+  background: #151515;
+}
+.bottom center span{
+  color: var(--clr-primary);
+}
+.bottom center a{
+  color: var(--clr-tertiary);
+  text-decoration: none;
+}
+.bottom center a:hover{
+  text-decoration: underline;
+}
+@media screen and (max-width: 900px) {
+  footer{
+    position: relative;
+    bottom: 0px;
+  }
+  .main-content{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .main-content .box{
+    margin: 5px 0;
+  }
+}
