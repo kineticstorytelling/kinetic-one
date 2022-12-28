@@ -6,8 +6,11 @@
 
 <?php
 
-// First check if content width has been set after the kinetic setup function.
-if( isset($content_width))
+// First check if content width has been set after the kinetic setup function. It also allows you to set the maximum allowed width so the user doesn't add an image that's too big
+if( ! isset($content_width)){
+    $content_width = 660; //If content width hasn't been set, set it to 660 px
+
+}
 
 function kineticwp_setup(){
     add_theme_support('automatic-feed-links');

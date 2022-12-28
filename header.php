@@ -13,14 +13,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <?php wp_head() ?> 
+        <!-- tells wordpress where we want to add auto-generated info -->
 </head>
-<body>
+<body <?php body_class(); ?> >
+<!-- this ^ allows Wordpress to add any class attributes to the body tag. We can also add our own classes as strings inside the parantheses ('custom') If you have multiple classes, you can add as an array "array('custom', 'custom2')" inside the parantheses. -->
     <header>
         <h2 class="logo">Kinetic 1</h2>
     <div class="nav_menu">
         <ul>
             <li><a href="#">Subscribe</a></li>
-            <li><a href="#">Features</a></li>
+            <li><a href="<?php echo esc_url(home_url()); ?>"><?php echo get_bloginfo('name') ?></a></li>
+            <!-- The home url retrieves the home page of Wordpress and pass it in esc_url to remove any unnecessary characters. get blog info is the site title name from wordpress in accounts -->
             <li><a href="#">Contact</a></li>
             <button class="nav_btn">Sign Up</button>
         </ul>
