@@ -1,6 +1,6 @@
 <?php
 /*
-* The main template file
+* The template for displaying all single posts
 */
 ?>
 <?php get_header() ?>
@@ -8,7 +8,7 @@
     <?php the_content() ?>
 
 <?php endwhile; else :
-    <p><?php _e('Sorry no posts match your criteria'); ?></p>
+    <p><?php _e('Sorry no pages match your criteria'); ?></p>
 
 endif;
 ?>
