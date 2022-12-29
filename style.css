@@ -59,8 +59,14 @@ header {
         stroke-dashoffset: 0;
     }
 }
+ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 ul li{
-    display: inline-block;
+    /* display: inline-block; */
     list-style: none;
     padding: 1px 20px;
     font-size: 18px;

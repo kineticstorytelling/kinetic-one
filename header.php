@@ -17,13 +17,23 @@
 <body <?php body_class(); ?> >
 <!-- this ^ allows Wordpress to add any class attributes to the body tag. We can also add our own classes as strings inside the parantheses ('custom') If you have multiple classes, you can add as an array "array('custom', 'custom2')" inside the parantheses. -->
     <header>
-        <h2 class="logo">Kinetic 1</h2>
+    <h2 class="logo"><a href="<?php echo esc_url(home_url());?>"><?php echo get_bloginfo('name') ?></a></h2>
     <div class="nav_menu">
         <ul>
-            <li><a href="#">Subscribe</a></li>
-            <li><a href="<?php echo esc_url(home_url()); ?>"><?php echo get_bloginfo('name') ?></a></li>
+            <?php 
+            wp_nav_menu(
+                array(
+                    'menu' => 'Primary',
+                    'container' => '',
+                    'theme_location' => 'primary',
+                    'items_wrap' => '<ul id="" class="">%3$s</ul>'
+                )
+                // This allows my menu to be dynamic and add the menu items from wordpress the user chooses.
+            );
+            ?>
+            <!-- <li><a href="#">Subscribe</a></li> -->
             <!-- The home url retrieves the home page of Wordpress and pass it in esc_url to remove any unnecessary characters. get blog info is the site title name from wordpress in accounts -->
-            <li><a href="#">Contact</a></li>
+            <!-- <li><a href="#">Contact</a></li> -->
             <button class="nav_btn">Sign Up</button>
         </ul>
         
