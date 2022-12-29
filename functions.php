@@ -21,4 +21,13 @@ function kineticwp_setup(){
 
 add_action('after_setup_theme', 'kineticwp_setup');
 // after setup is a wordpress hook which will be called queueing each page load. It's generally used to form a basic setup, registration and also any needed actions for our theme.
+
+function kinetic_scripts(){
+    /* Add styles */
+
+    wp_enqueue_style('kinetic-fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css", array(), '1.0');
+    wp_enqueue_style('kinetic-style', get_template_directory_uri() . '/style.css');
+    // wp_enqueue_script('kinetic-js', get_template_directory_uri() . '/js/bootstrap.js')
+}
+add_action('wp_enqueue_scripts', 'kinetic_scripts')
 ?>
