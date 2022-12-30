@@ -25,9 +25,15 @@ add_action('after_setup_theme', 'kineticwp_setup');
 function kinetic_scripts(){
     /* Add styles */
 
-    wp_enqueue_style('kinetic-fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css", array(), '1.0');
+    wp_enqueue_style('kinetic-fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css", array(), '5.15.3');
     wp_enqueue_style('kinetic-style', get_template_directory_uri() . '/style.css');
     // wp_enqueue_script('kinetic-js', get_template_directory_uri() . '/js/bootstrap.js')
 }
-add_action('wp_enqueue_scripts', 'kinetic_scripts')
+add_action('wp_enqueue_scripts', 'kinetic_scripts');
+
+function new_excerpt_text(){
+    return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_text');
+// This filter plus the function is used to make the excerpt ... The fuck is the point of that.
 ?>
