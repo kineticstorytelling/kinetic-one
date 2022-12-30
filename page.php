@@ -8,10 +8,12 @@
     <?php the_content() ?>
 
 <?php endwhile; else :
-    <p><?php _e('Sorry no pages match your criteria'); ?></p>
+    // <p> <?php _e('Sorry no pages match your criteria'); ?> </p>
 
 endif;
 ?>
 
 <!-- Footer section -->
 <?php get_footer() ?>
+
+
