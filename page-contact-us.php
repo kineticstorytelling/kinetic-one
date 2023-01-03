@@ -1,7 +1,14 @@
 
+<?php
+/*
+* Template Name: Contact Us
+*/
+
+get_header();
+?>
 
  <div class="wrapper">
-     <div class="title">Login Form</div>
+     <div class="title"><?php the_title(); ?></div>
      <form action="#">
         <div class="field"> 
             <input type="text" required>
@@ -28,3 +35,5 @@
         </div>
      </form>
  </div>
+
+ <?php get_footer(); ?>
