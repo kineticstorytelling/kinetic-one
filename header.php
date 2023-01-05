@@ -17,7 +17,7 @@
 <body <?php body_class(); ?> >
 <!-- this ^ allows Wordpress to add any class attributes to the body tag. We can also add our own classes as strings inside the parantheses ('custom') If you have multiple classes, you can add as an array "array('custom', 'custom2')" inside the parantheses. -->
     <header>
-    <h2 class="logo"><a href="<?php echo esc_url(home_url());?>"><?php echo get_bloginfo('name') ?></a></h2>
+        <h2 class="logo"><a href="<?php echo esc_url(home_url());?>"><?php echo get_bloginfo('name') ?></a></h2>
     <div class="nav_menu">
         <ul>
             <?php 
@@ -36,7 +36,13 @@
             <!-- <li><a href="#">Contact</a></li> -->
             <button class="nav_btn">Sign Up</button>
         </ul>
-        
+        <section>
+            <div>
+                <img src="<?php header_image(); ?>" alt="">
+                <!-- This ^ is utilizing the array in function.php -->
+                <!-- <p class="feature-text"></p> -->
+            </div>
+        </section>
     </header>
     </div>
 

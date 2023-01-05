@@ -38,7 +38,16 @@
         </div>
 
         <div class="right box">
-          <h2>Contact us</h2>
+        <h5>Navigation</h5>
+      <?php wp_nav_menu(
+                array(
+                    'menu' => 'footer',
+                    'container' => 'ul',
+                    'theme_location' => 'primary',
+                    'items_wrap' => '<ul id="" class="">%3$s</ul>'
+                ) );
+                ?>
+          <!-- <h2>Contact us</h2>
           <div class="content">
             <form action="#">
               <div class="email">
@@ -53,7 +62,7 @@
                 <button type="submit">Send</button>
               </div>
             </form>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="bottom">

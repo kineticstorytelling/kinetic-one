@@ -17,6 +17,12 @@ function kineticwp_setup(){
     // automatic feed links enable posts and comments automatically
     add_theme_support('title-tag');
     //this lets wordpress manage our title tag rather than using our hard coded one
+    add_theme_support('post-thumbnails');
+    //For the thumbnail posts
+    register_nav_menus(array(
+        'primary' => __('Main header menu', 'kineticwp'),
+        'footer' => __('Footer Menu', 'kineticwp')
+    ));
 }
 
 add_action('after_setup_theme', 'kineticwp_setup');
@@ -36,4 +42,39 @@ function new_excerpt_text(){
 }
 add_filter('excerpt_more', 'new_excerpt_text');
 // This filter plus the function is used to make the excerpt ... The fuck is the point of that.
+
+function add_footer_menu_class($classes, $item, $args){
+    if($args->theme_location == 'footer'){
+        $classes[] = 'msg';
+    }
+    return $classes;
+}
+// this function runs the footer menu dynamic backend, with the class msg being used. Can change that to anything that matches with the footer.
+//explanation of classes item args
+add_filter('nav_menu_css_class', 'add_footer_menu_class', 10, 3);
+
+// This is for the custom header V
+$args = array(
+    'width' => 2600,
+    'height' => 650,
+    // 'default-image' => get_template_directory_uri() . '/images/notebook.jpg',
+    'uploads' => true //This allows the user to upload their own image
+);
+add_theme_support('custom-header', $args); //we need to register our custom headers functionality
+
+//This is an unecessary custom header addtional options suggested for users
+register_default_headers( array(
+    'lake1' => array(
+        'url' => get_template_directory_uri(),  
+        // . '/image/what.png'
+        'description' => __('Lake 1')
+    ),
+    'lake2' => array(
+        'url' => get_template_directory_uri(),  
+        // . '/image/what.png' add this ^
+        'description' => __('Lake 2')
+    ),
+    )
+);
+
 ?>
